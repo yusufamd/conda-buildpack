@@ -12,9 +12,14 @@ fi
 
 if [ -f conda-requirements.txt ]; then
     puts-step "Installing dependencies using Conda"
-	#conda install -c https://conda.anaconda.org/auto easydict
+	conda install -c https://conda.anaconda.org/auto easydict
 	#conda install -c https://conda.anaconda.org/litl-rnd caffe	
     conda install --file conda-requirements.txt --yes
+fi
+
+if [ -f requirements.txt ]; then
+    puts-step "Installing dependencies using PIP"
+	pip install -r requirements.txt
 fi
 
 if [ -f environment.yml ]; then
