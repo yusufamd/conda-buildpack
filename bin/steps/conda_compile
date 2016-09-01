@@ -13,6 +13,7 @@ fi
 if [ -f conda-requirements.txt ]; then
     puts-step "Installing dependencies using Conda"
 	conda install -c https://conda.anaconda.org/auto easydict
+	conda config --add channels conda-forge
 	#conda install -c https://conda.anaconda.org/litl-rnd caffe	
     conda install --file conda-requirements.txt --yes
 fi
